@@ -45,6 +45,8 @@ class TimeStampedFile(io.TextIOBase):
 
     def write(self, s):
 
+        sys.stdout.write(s)
+
         dt = time.time() - self.t0
 
         for substr in s.splitlines(keepends=True):
